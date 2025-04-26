@@ -37,13 +37,14 @@
     </modules>
 
     <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <dubbo.version>3.3.0</dubbo.version>
-        <spring-boot.version>2.7.14</spring-boot.version>
+        <dubbo.version>3.3.1</dubbo.version>
+        <spring-boot.version>3.2.3</spring-boot.version>
         <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
+        <brave-bom.version>6.0.1</brave-bom.version>
     </properties>
 
     <dependencyManagement>
@@ -72,6 +73,15 @@
                 <groupId>org.apache.dubbo</groupId>
                 <artifactId>dubbo-bom</artifactId>
                 <version>${dubbo.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/io.zipkin.brave/brave-bom -->
+            <dependency>
+                <groupId>io.zipkin.brave</groupId>
+                <artifactId>brave-bom</artifactId>
+                <version>${brave-bom.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
